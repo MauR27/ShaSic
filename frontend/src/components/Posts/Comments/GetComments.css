@@ -1,0 +1,25 @@
+.get-comments-bg-cursor {
+  background: rgb(21, 21, 55);
+  background: linear-gradient(0deg, rgb(52, 79, 167) 28%, rgb(33, 33, 85) 95%);
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+.get-comments-container {
+  color: #fff;
+  background: rgb(21, 21, 55);
+  background: linear-gradient(0deg, rgb(52, 79, 167) 28%, rgb(33, 33, 85) 95%);
+  min-height: 100vh;
+  background-attachment: fixed;
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.get-comments-post-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}

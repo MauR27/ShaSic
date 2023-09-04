@@ -1,0 +1,13 @@
+#home-posts-page-container {
+  color: #fff;
+  background: rgb(21, 21, 55);
+  background: linear-gradient(0deg, rgb(52, 79, 167) 28%, rgb(33, 33, 85) 95%);
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+.bg-cursor {
+  background: rgb(21, 21, 55);
+  background: linear-gradient(0deg, rgb(52, 79, 167) 28%, rgb(33, 33, 85) 95%);
+  min-height: 100vh;
+  background-attachment: fixed;
+}
