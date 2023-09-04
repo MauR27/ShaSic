@@ -5,6 +5,8 @@ import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 
 import { useSelector } from "react-redux";
 
+const URL_API = process.env.REACT_APP_SERVER_URL;
+
 const PostLikes = ({ postId, likes }) => {
   const [liked, setLiked] = useState(false);
   const [getLikes, setGetLikes] = useState(likes.length);
@@ -17,7 +19,7 @@ const PostLikes = ({ postId, likes }) => {
 
   const handleLike = async () => {
     try {
-      await fetch("http://localhost:3000/api/users/post", {
+      await fetch(`${URL_API}/post`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
