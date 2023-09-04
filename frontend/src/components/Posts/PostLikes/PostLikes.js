@@ -1,8 +1,7 @@
-import { Box, Button, Flex, Text, CardFooter } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
-import { BiChat } from "react-icons/bi";
 
 import { useSelector } from "react-redux";
 
