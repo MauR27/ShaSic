@@ -20,7 +20,7 @@ router.post("/logout", logoutUser);
 router
   .route("/post")
   .post(protect, addUserPost)
-  .get(getUserPost)
+  .get(protect, getUserPost)
   .put(protect, postLikes);
 router.route("/post/:_id/comments").post(protect, addComments);
 router
