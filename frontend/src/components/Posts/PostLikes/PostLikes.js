@@ -20,6 +20,7 @@ const PostLikes = ({ postId, likes }) => {
   const handleLike = async () => {
     try {
       await fetch(`${URL_API}/post`, {
+        credentials: "include",
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
