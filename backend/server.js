@@ -17,7 +17,13 @@ app.use(express.json({ limit: "5mb" }));
 app.use(express.urlencoded({ extended: true, limit: "5mb" }));
 
 app.use(cookieParser());
-app.use(cors({ credentials: true }));
+
+const corsOptions = {
+  origin: "https://shasic-frontend.onrender.com",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true,
+};
+app.use(cors(corsOptions));
 
 app.use("/api/users", userRoutes);
 
