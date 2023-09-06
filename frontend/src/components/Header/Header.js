@@ -1,5 +1,4 @@
 import React from "react";
-// import "./Header.css";
 import { MdLogout } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { NavLink, useNavigate } from "react-router-dom";

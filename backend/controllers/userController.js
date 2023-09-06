@@ -10,7 +10,6 @@ import generateToken from "../utils/generateToken.js";
 
 const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body.values;
-  // const { email, password } = req.body;
 
   const user = await User.findOne({ email });
 
@@ -113,7 +112,6 @@ const addComments = asyncHandler(async (req, res) => {
 
 const registerUser = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body.values;
-  // const { name, email, password } = req.body;
   const userExists = await User.findOne({ email });
 
   if (userExists) {

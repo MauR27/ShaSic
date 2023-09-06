@@ -1,4 +1,3 @@
-// import "./GetPosts.css";
 import { useEffect, useState } from "react";
 import { fetchApiPost } from "../api/postApi";
 import { Link } from "react-router-dom";
@@ -32,9 +31,7 @@ const GetPosts = () => {
       (async () => {
         const data = await fetchApiPost();
         setGetPost(data);
-        setInterval(() => {
-          setIsLoading(false);
-        }, 1000);
+        setIsLoading(false);
       })();
     } catch (error) {
       console.error(error);
@@ -61,7 +58,6 @@ const GetPosts = () => {
                     <Avatar
                       size={["sm", "md"]}
                       name={data.user[0].name}
-                      // src="https://bit.ly/sage-adebayo"
                       color="brand.600"
                       bg="white"
                     />
@@ -99,7 +95,6 @@ const GetPosts = () => {
                 <Flex
                   justifyContent="center"
                   alignItems="center"
-                  // bgGradient={data.post.bgColor}
                   bgGradient={data.post.bgColor}
                   h="200px"
                   w="100%"

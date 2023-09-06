@@ -1,4 +1,3 @@
-import "./AddPostForm.css";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { usePostDataMutation } from "../../slices/usersApiSlice";
@@ -75,7 +74,7 @@ const AddPostForm = () => {
 
       if (response.ok) {
         const data = await response.json();
-        const imageUrl = data.secure_url; // URL de la imagen en Cloudinary
+        const imageUrl = data.secure_url;
         formik.setFieldValue("image", imageUrl);
         setLoading(false);
       } else {
@@ -189,7 +188,7 @@ const AddPostForm = () => {
                           id,
                           status: "error",
                           description:
-                            "You have to write anything to upload an image...",
+                            "You have to write something to upload an image...",
                           isClosable: true,
                           duration: 2000,
                           position: "top",

@@ -75,7 +75,6 @@ const AddComments = () => {
               onChange={formik.handleChange}
               value={formik.values.comment}
               autoComplete="off"
-              placeholder="Share any memories with your friends..."
             />
           </FormControl>
           <Button

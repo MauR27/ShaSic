@@ -1,12 +1,9 @@
 import { apiSlice } from "./apiSlice";
 
-const USERS_URL = "/api/users";
-
 export const usersApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     login: builder.mutation({
       query: (data) => ({
-        // url: `${USERS_URL}/auth`,
         url: `/auth`,
         method: "POST",
         body: data,
@@ -14,7 +11,6 @@ export const usersApiSlice = apiSlice.injectEndpoints({
     }),
     register: builder.mutation({
       query: (data) => ({
-        // url: '',
         url: "",
         method: "POST",
         body: data,
@@ -22,14 +18,12 @@ export const usersApiSlice = apiSlice.injectEndpoints({
     }),
     logout: builder.mutation({
       query: () => ({
-        // url: `${USERS_URL}/logout`,
         url: `/logout`,
         method: "POST",
       }),
     }),
     updateUser: builder.mutation({
       query: (data) => ({
-        // url: `${USERS_URL}/profile`,
         url: `/profile`,
         method: "PUT",
         body: data,
@@ -37,7 +31,6 @@ export const usersApiSlice = apiSlice.injectEndpoints({
     }),
     postData: builder.mutation({
       query: (data) => ({
-        // url: `${USERS_URL}/post`,
         url: `/post`,
         method: "POST",
         body: data,
@@ -45,7 +38,6 @@ export const usersApiSlice = apiSlice.injectEndpoints({
     }),
     getPostData: builder.mutation({
       query: (data) => ({
-        // url: `${USERS_URL}/post`,
         url: `/post`,
         method: "GET",
         body: data,
@@ -53,7 +45,6 @@ export const usersApiSlice = apiSlice.injectEndpoints({
     }),
     getUsersData: builder.mutation({
       query: (data) => ({
-        // url: `${USERS_URL}/auth`,
         url: `/auth`,
         method: "GET",
         body: data,
@@ -62,7 +53,6 @@ export const usersApiSlice = apiSlice.injectEndpoints({
     addComment: builder.mutation({
       query: (data) => {
         return {
-          // url: `${USERS_URL}/post/${data.values.postId}/comments`,
           url: `/post/${data.values.postId}/comments`,
           method: "POST",
           body: data.values,

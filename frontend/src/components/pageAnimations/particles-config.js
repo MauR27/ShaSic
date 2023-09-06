@@ -18,9 +18,9 @@ const particlesConfig = {
     size: {
       random: {
         enable: true,
-        minimumValue: 3,
+        minimumValue: 1,
       },
-      value: 4,
+      value: 2,
     },
     move: {
       enable: true,

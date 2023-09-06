@@ -58,7 +58,6 @@ const theme = extendTheme({
   styles: {
     global: {
       body: {
-        // bg: "gray.50",
         bgGradient: "linear(to-t, purple.100 , gray.50 50%)",
       },
     },
