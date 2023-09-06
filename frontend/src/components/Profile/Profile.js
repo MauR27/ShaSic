@@ -1,4 +1,3 @@
-import "./Profile.css";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCredentials } from "../../slices/authSlice";
