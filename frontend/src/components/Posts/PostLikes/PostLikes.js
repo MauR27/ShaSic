@@ -55,6 +55,7 @@ const PostLikes = ({ postId, likes }) => {
         <Button
           flex="1"
           borderRadius="2px"
+          fontSize={{ base: "12px", md: "14px", lg: "16px" }}
           variant="ghost"
           color="brand.600"
           leftIcon={<AiFillHeart />}

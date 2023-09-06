@@ -83,7 +83,9 @@ const GetPosts = () => {
                 </Flex>
               </CardHeader>
               <CardBody>
-                <Text>{data.post.text}</Text>
+                <Text fontSize={{ base: "10px", md: "15px", lg: "20px" }}>
+                  {data.post.text}
+                </Text>
               </CardBody>
               {data.post.image ? (
                 <Image
@@ -100,9 +102,14 @@ const GetPosts = () => {
                   w="100%"
                   objectFit="cover"
                 >
-                  <Text fontSize="30px" fontWeight="bold">
-                    {data.post.text}
-                  </Text>
+                  <Flex
+                    fontWeight="bold"
+                    flexWrap="wrap"
+                    overflowX="hidden"
+                    fontSize={{ base: "15px", md: "20px", lg: "30px" }}
+                  >
+                    <Text>{data.post.text}</Text>
+                  </Flex>
                 </Flex>
               )}
 

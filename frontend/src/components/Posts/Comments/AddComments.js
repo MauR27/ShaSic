@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAddCommentMutation } from "../../../slices/usersApiSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
@@ -11,11 +11,14 @@ import {
   Flex,
   FormControl,
   Input,
+  Spinner,
   useToast,
 } from "@chakra-ui/react";
 
 const AddComments = () => {
   const [commentsMutation] = useAddCommentMutation();
+
+  const [isLoading, setIsLoading] = useState(false);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -34,6 +37,7 @@ const AddComments = () => {
         if (values.comment) {
           const res = await commentsMutation({ values }).unwrap();
           dispatch(addComment({ ...res }));
+          setIsLoading(true);
           navigate(0);
         } else {
           if (!chakraToast.isActive(id)) {
@@ -75,26 +79,31 @@ const AddComments = () => {
               onChange={formik.handleChange}
               value={formik.values.comment}
               autoComplete="off"
+              placeholder="Comment anything"
             />
           </FormControl>
-          <Button
-            fontSize={{ base: "12px", md: "14px", lg: "16px" }}
-            bg="brand.600"
-            type="submit"
-            border="1px  solid"
-            borderColor="blackAlpha.300"
-            h="32px"
-            borderRadius="5px"
-            cursor="pointer"
-            color="white"
-            fontWeight="normal"
-            _hover={{
-              color: "blackAlpha.700",
-              bg: "white",
-            }}
-          >
-            Post
-          </Button>
+          {isLoading ? (
+            <Spinner color="brand.600" />
+          ) : (
+            <Button
+              fontSize={{ base: "12px", md: "14px", lg: "16px" }}
+              bg="brand.600"
+              type="submit"
+              border="1px  solid"
+              borderColor="blackAlpha.300"
+              h="32px"
+              borderRadius="5px"
+              cursor="pointer"
+              color="white"
+              fontWeight="normal"
+              _hover={{
+                color: "blackAlpha.700",
+                bg: "white",
+              }}
+            >
+              Post
+            </Button>
+          )}
         </Flex>
         <Divider borderColor="blackAlpha.400" mb="5rem" />
       </Box>

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { usePostDataMutation } from "../../slices/usersApiSlice";
 import { addPost } from "../../slices/postSlice";
-import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { AiOutlineUpload } from "react-icons/ai";
@@ -42,12 +41,25 @@ const AddPostForm = () => {
         if (values.text) {
           const res = await postMutation({ values }).unwrap();
           dispatch(addPost({ ...res }));
+          setLoading(true);
           navigate(0);
         } else {
-          toast.error("You have to post something!!");
+          if (!chakraToast.isActive(id)) {
+            chakraToast({
+              id,
+              status: "error",
+              description: "You have to post something to upload an image...",
+              isClosable: true,
+              duration: 2000,
+              position: "top",
+            });
+          }
         }
       } catch (error) {
-        toast.error(error);
+        chakraToast({
+          status: "error",
+          description: { error },
+        });
       }
     },
   });
@@ -176,7 +188,7 @@ const AddPostForm = () => {
                     fontSize={{ base: "12px", md: "14px", lg: "16px" }}
                     gap={2}
                     display="flex"
-                    border="1px  solid"
+                    border="1px solid"
                     borderColor="blackAlpha.300"
                     h="32px"
                     m="0"

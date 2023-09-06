@@ -95,7 +95,7 @@ const Header = () => {
                   </MenuItem>
                 </NavLink>
                 <MenuItem icon={<MdLogout />} onClick={logoutHandler}>
-                  <Text fontSize={["xs", "sm", "md"]}>Log Out</Text>
+                  <Text fontSize={["xs", "sm"]}>Log Out</Text>
                 </MenuItem>
               </MenuList>
             </Menu>

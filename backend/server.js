@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true, limit: "5mb" }));
 app.use(cookieParser());
 
 const corsOptions = {
-  origin: "https://shasic-frontend.onrender.com",
+  origin: ["https://shasic-frontend.onrender.com", "http://localhost:3000/"],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
 };
